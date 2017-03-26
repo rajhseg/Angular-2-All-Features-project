@@ -1,0 +1,31 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="small-form">
+    <div class="row">
+        <label for="username">Username/Email</label>
+        <input
+                class="u-full-width"
+                type="email"
+                placeholder="test@mailbox.com"
+                id="username"
+                name="username"
+                required
+                [(ngModel)]="username"
+                #user="ngModel">
+        <p [hidden]="user.valid || user.pristine">Username is required</p>
+    </div>
+    <div class="row">
+        <label for="password">Password</label>
+        <input
+                class="u-full-width"
+                type="password"
+                placeholder="Password"
+                id="password"
+                name="password"
+                required
+                [(ngModel)]="password"
+                #pass="ngModel">
+        <p [hidden]="pass.valid || pass.pristine">Password is required</p>
+    </div>
+    <div class="row">
+        <button class="button" type="submit" [disabled]="!loginForm.form.valid">Sign In</button>
+    </div>
+</form>

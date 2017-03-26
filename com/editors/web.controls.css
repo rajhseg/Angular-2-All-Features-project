@@ -1,0 +1,119 @@
+    header .right-text-outer .form-outer .input-type {
+        border: none;
+        padding: 9px;
+        width: 100%;
+        text-transform: uppercase;
+        border-bottom: 1px solid #a2a3a3;
+        margin-bottom: 20px;
+        font-family: "Oswald",sans-serif;
+        border-radius: 0;
+    }
+
+    header .right-text-outer .form-outer .input-submit {
+        background: #0398d2;
+        border-bottom: 3px solid #434d54;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 15px 20px;
+        font-family: "Oswald",sans-serif;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+    
+    .checkcontrol, .radiocontrol {
+        opacity: 0;
+        position: absolute;   
+    }
+    .checkcontrol, .checkcontrol-label, .radiocontrol, .radiocontrol-label {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 5px;
+        padding:3px;
+        cursor: pointer;
+    }
+    .checkcontrol-label, .radiocontrol-label {
+        position: relative;
+        font-weight: 600;
+    }    
+    .checkcontrol + .checkcontrol-label:before, .radiocontrol + .radiocontrol-label:before {
+        content: '';
+        background: #fff;
+        border: 2px solid #ddd;
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        margin-right: 10px;
+        text-align: center;
+    } 
+    .checkcontrol:focus + .checkcontrol-label, .radiocontrol:focus + .radiocontrol-label {
+        outline: 1px solid #ddd; 
+    }
+
+    .radiocontrol + .radiocontrol-label:before {
+        border-radius: 50%;
+    }
+
+
+    .fancycheck {
+        font-size: 15px;
+        position: relative;      
+        margin-bottom: 15px;
+        padding-left: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        line-height: 30px;
+    }
+    .fancycheck input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+
+    .fancydraw {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: #e6e6e6;
+    }
+   
+    .fancycheck:hover input ~ .fancydraw,
+    .fancycheck input:focus ~ .fancydraw {
+        background: #ccc;
+    }
+   
+
+    .fancycheck input:disabled ~ .fancydraw {
+        pointer-events: none;
+        opacity: .6;
+        background: #e6e6e6;
+    }
+    .fancydraw:after {
+        position: absolute;
+        display: none;
+        content: '';
+    }
+    .fancycheck input:checked ~ .fancydraw:after {
+        display: block ;
+    }
+    .fancycheckbox .fancydraw:after {
+        top: 2px;
+        left: 7px;
+        width: 6px;
+        height: 12px;
+        transform: rotate(45deg);
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+    }
+    .fancycheck input:disabled ~ .fancydraw:after {
+        border-color: #7b7b7b;
+    }
+

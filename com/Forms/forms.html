@@ -1,0 +1,47 @@
+    <br/>
+    <div class="container" style="width:400px">
+        User Name : <input [ngClass]="setuserClass()" 
+                           [class.expand]="userfocus" 
+                           [class.normal]="!userfocus"
+                           [class.fancy]="isFancy()" type="text" 
+                             class="form-control" 
+                             placeholder="Please enter user name"  /> <br />
+        Password  : <input   [(focused)]="passfocus" 
+                            (IsFocusChange)="focusChanged($event)" 
+                            type="password" class="form-control" 
+                            placeholder="Please enter password" /> <br/>
+        <button type="submit" (click)="PasswordFocus()" 
+                class="btn btn-lg btn-success btn-block">Password Focus</button>    
+        <button type="submit" (click)="UserNameFocus()" 
+                class="btn btn-lg btn-primary btn-block">Username Focus</button>
+                <div [ellipses]="userfocus">
+                    This is a sample directive
+                </div>
+    </div>
+
+<div class="container">
+    <br />
+
+        Height : <input type="text" [(ngModel)]="height">
+        Background : <input type="text" [(ngModel)]="background">
+        Class : <input type="text" [(ngModel)]="classname">
+        <button type="submit" [style.height.px]="height" 
+                [style.background]="background" 
+                [class]="classname"            
+                >Submit</button>
+    </div>
+<br/>
+    <div class="container">       
+        Font Size :<label>{{fontsize}}</label>
+        <input style="width:400px" type="range" [(ngModel)]="fontsize" />
+        <br/>
+        <button type="submit" class="btn btn-primary" [ngStyle]="{'font-size':fontsize+'px'}">Dynamic Font Size</button>
+    </div>
+
+    <div class="container">
+        <br/>
+        <button type="submit" (click)="newstyle={'color':'red','background':'blue'}">Change Style</button>
+        <button type="submit" (click)="newstyle={'height':'40px'}">Change Height</button>
+        <button type="submit" (click)="newstyle={}">Remove Style</button> <br/><br/>        
+        <input type="text" [ngStyle]="newstyle" />    
+    </div>

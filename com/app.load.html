@@ -1,0 +1,50 @@
+<div>
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">   
+                
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+                    data-target="#angular-collapse-menu" 
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                                             
+                <a class="navbar-brand" href="#">Angular 2</a>
+            </div>
+            <div class="collapse navbar-collapse" id="angular-collapse-menu">
+                <ul class="nav navbar-nav">                    
+                        <li>
+                            <a [routerLink]="['/employee']">Employees</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/student']">Student</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/rating']">Rating</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/news']">Control & Directive</a>                                                        
+                        </li>
+                        <li>
+                            <a [routerLink]="['/login']" >Log In</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/sign-up']">Sign Up</a>
+                        </li>
+                    </ul>            
+            </div>
+
+
+
+            
+        </div>                        
+    </nav>    
+
+
+</div>
+<div style="padding-top:65px;">
+    <router-outlet></router-outlet>
+</div>
